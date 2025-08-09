@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-cloud-sun"></i> Weather App</h1>
+            <p>Get real-time weather information for any city</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Enter city name..." />
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Fetching weather data...</p>
+        </div>
+
+        <div id="error" class="error hidden">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p id="errorMessage"></p>
+        </div>
+
+        <div id="weatherCard" class="weather-card hidden">
+            <!-- Location Header -->
+            <div class="location-header">
+                <h2 id="locationName"></h2>
+                <p id="locationDetails"></p>
+                <p id="localTime"></p>
+            </div>
+
+            <!-- Main Weather Info -->
+            <div class="main-weather">
+                <div class="temperature-section">
+                    <div class="temp-display">
+                        <span id="tempC" class="temp-main"></span>
+                        <span class="temp-unit">°C</span>
+                    </div>
+                    <div class="temp-secondary">
+                        <span id="tempF"></span>°F
+                    </div>
+                    <div class="feels-like">
+                        Feels like <span id="feelsLikeC"></span>°C
+                    </div>
+                </div>
+                
+                <div class="condition-section">
+                    <img id="weatherIcon" src="" alt="Weather Icon" />
+                    <p id="weatherCondition"></p>
+                    <p id="lastUpdated"></p>
+                </div>
+            </div>
+
+            <!-- Weather Details Grid -->
+            <div class="weather-details">
+                <div class="detail-card">
+                    <i class="fas fa-wind"></i>
+                    <h3>Wind</h3>
+                    <p id="windSpeed"></p>
+                    <p id="windDirection"></p>
+                </div>
+
+                <div class="detail-card">
+                    <i class="fas fa-tint"></i>
+                    <h3>Humidity</h3>
+                    <p id="humidity"></p>
+                </div>
+
+                <div class="detail-card">
+                    <i class="fas fa-thermometer-half"></i>
+                    <h3>Pressure</h3>
+                    <p id="pressure"></p>
+                </div>
+
+                <div class="detail-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Visibility</h3>
+                    <p id="visibility"></p>
+                </div>
+
+                <div class="detail-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>UV Index</h3>
+                    <p id="uvIndex"></p>
+                </div>
+
+                <div class="detail-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Cover</h3>
+                    <p id="cloudCover"></p>
+                </div>
+            </div>
+
+            <!-- Advanced Details (Collapsible) -->
+            <div class="advanced-section">
+                <button id="toggleAdvanced" class="toggle-btn">
+                    <i class="fas fa-chevron-down"></i>
+                    Advanced Details
+                </button>
+                <div id="advancedDetails" class="advanced-details hidden">
+                    <div class="advanced-grid">
+                        <div class="advanced-item">
+                            <label>Heat Index:</label>
+                            <span id="heatIndex"></span>
+                        </div>
+                        <div class="advanced-item">
+                            <label>Wind Chill:</label>
+                            <span id="windChill"></span>
+                        </div>
+                        <div class="advanced-item">
+                            <label>Dew Point:</label>
+                            <span id="dewPoint"></span>
+                        </div>
+                        <div class="advanced-item">
+                            <label>Wind Gust:</label>
+                            <span id="windGust"></span>
+                        </div>
+                        <div class="advanced-item">
+                            <label>Precipitation:</label>
+                            <span id="precipitation"></span>
+                        </div>
+                        <div class="advanced-item">
+                            <label>Solar Radiation:</label>
+                            <span id="solarRadiation"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
